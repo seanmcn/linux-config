@@ -1,0 +1,28 @@
+#!/bin/bash
+# Install script for .bashrc settings
+
+INSTALL_DIR="$HOME/.bash"
+
+if [ -d $INSTALL_DIR ]; then
+  echo "Looks like you have a $INSTALL_DIR directory installed.  Good job!"
+  exit
+fi;
+
+for x in $HOME/.bashrc $HOME/.profile $HOME/.bash_profile $HOME/.inputrc ; do
+  if [ -e $x ]; then
+    mv $x "$x"_backup
+  fi;
+  echo "source $INSTALL_DIR/bashrc" > $x
+done
+
+if [ ! -e $HOME/.bash_functions ]; then
+  cp $INSTALL_DIR/config/.bash_functions $HOME/.bash_functions
+fi;
+
+if [ ! -e $HOME/.bash_aliases ]; then
+  cp $INSTALL_DIR/config/.bash_aliases $HOME/.bash_aliases
+fi;
+
+if [ ! -e $HOME/.gitconfig ]; then
+  cp $INSTALL_DIR/config/.gitconfig $HOME/.gitconfig
+fi;
