@@ -37,3 +37,6 @@ function extract () {
       echo "'$1' is not a valid file!"
   fi
 }
+
+# Default tail/follow file
+function follow() { tail -f -n 600 "$@"; }
