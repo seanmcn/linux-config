@@ -24,7 +24,7 @@ crontab -e
 And add the following: 
 
 ```sh
-0 * * * * ~/.bash/auto-update > /tmp/my-linux-sync.log 2>&1
+0 * * * * ~/.bash/auto-update > /tmp/seans-linux-sync.log 2>&1
 ```
 
 ## Functions included
