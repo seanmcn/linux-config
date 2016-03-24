@@ -8,6 +8,11 @@ Little repo to maintain the same linux configuration across multiple hosts.
 * Required: `/config/.gitconfig` needs your full name and email address
 * Optional: If you want to install from a directory that isn't `.bash` you need to change the `INSTALL_DIR` variable in `/install` and update `/auto-update`
 
+## Install
+```sh
+git clone your-forked-repo-url/linux-config.git .bash
+```
+
 ## Auto updates
 
 If you want the configurations to automatically update edit your cron tab like so:
