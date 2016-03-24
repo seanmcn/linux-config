@@ -24,6 +24,6 @@ done
 mv $HOME/.gitconfig "$INSTALL_DIR"/backup/.gitconfig
 echo "Changing .gitconfig to use source $INSTALL_DIR/config/.gitconfig"
 echo "[include]
-          path = $INSTALL_DIR/config/.gitconfig" > $HOME/$x
+          path = $INSTALL_DIR/config/.gitconfig" > $HOME/.gitconfig
 
 echo "Completed!"
