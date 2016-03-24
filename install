@@ -5,24 +5,26 @@ INSTALL_DIR="$HOME/.bash"
 
 if [ -d $INSTALL_DIR ]; then
   echo "Looks like you have a $INSTALL_DIR directory installed.  Good job!"
+else
+  echo "This folder should be named $INSTALL_DIR"
   exit
 fi;
 
-for x in $HOME/.bashrc $HOME/.profile $HOME/.bash_profile $HOME/.inputrc ; do
+files=(.bashrc .bash_functions .bash_aliases .inputrc )
+echo "Backing-up and re-writing configurations!"
+
+for x in "${files[@]}" ; do
   if [ -e $x ]; then
-    mv $x "$x"_backup
+    mv $HOME/$x "$INSTALL_DIR"/backup/"$x"_backup
+    echo "Backing up $x to $INSTALL_DIR/backup/$x"
   fi;
-  echo "source $INSTALL_DIR/bashrc" > $x
+  echo "source $INSTALL_DIR/config/$x" > $x
 done
 
-if [ ! -e $HOME/.bash_functions ]; then
-  cp $INSTALL_DIR/config/.bash_functions $HOME/.bash_functions
-fi;
+mv $HOME/.gitconfig "$INSTALL_DIR"/backup/.gitconfig
+echo "Changing .gitconfig to use source $INSTALL_DIR/config/.gitconfig"
+echo "[include]
+          path = $INSTALL_DIR/config/.gitconfig" > $x
 
-if [ ! -e $HOME/.bash_aliases ]; then
-  cp $INSTALL_DIR/config/.bash_aliases $HOME/.bash_aliases
-fi;
 
-if [ ! -e $HOME/.gitconfig ]; then
-  cp $INSTALL_DIR/config/.gitconfig $HOME/.gitconfig
-fi;
+echo "Completed!"
