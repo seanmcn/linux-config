@@ -6,25 +6,24 @@ INSTALL_DIR="$HOME/.bash"
 if [ -d $INSTALL_DIR ]; then
   echo "Looks like you have a $INSTALL_DIR directory installed.  Good job!"
 else
-  echo "This folder should be named $INSTALL_DIR"
+  echo "This folder should be named $INSTALL_DIR alternatively you can change the INSTALL_DIR variable"
   exit
 fi;
 
-files=(.bashrc .bash_functions .bash_aliases .inputrc )
+files=(.bashrc .bash_functions .bash_aliases .inputrc)
 echo "Backing-up and re-writing configurations!"
 
 for x in "${files[@]}" ; do
   if [ -e $x ]; then
-    mv $HOME/$x "$INSTALL_DIR"/backup/"$x"_backup
+    mv $HOME/$x "$INSTALL_DIR"/backup/"$x"
     echo "Backing up $x to $INSTALL_DIR/backup/$x"
   fi;
-  echo "source $INSTALL_DIR/config/$x" > $x
+  echo "source $INSTALL_DIR/config/$x" > $HOME/$x
 done
 
 mv $HOME/.gitconfig "$INSTALL_DIR"/backup/.gitconfig
 echo "Changing .gitconfig to use source $INSTALL_DIR/config/.gitconfig"
 echo "[include]
-          path = $INSTALL_DIR/config/.gitconfig" > $x
-
+          path = $INSTALL_DIR/config/.gitconfig" > $HOME/$x
 
 echo "Completed!"
