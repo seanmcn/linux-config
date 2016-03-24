@@ -14,9 +14,9 @@ files=(.bashrc .bash_functions .bash_aliases .inputrc)
 echo "Backing-up and re-writing configurations!"
 
 for x in "${files[@]}" ; do
-  if [ -e $x ]; then
+  if [ -e $HOME/$x ]; then
     mv $HOME/$x "$INSTALL_DIR"/backup/"$x"
-    echo "Backing up $x to $INSTALL_DIR/backup/$x"
+    echo "Backing up $HOME/$x to $INSTALL_DIR/backup/$x"
   fi;
   echo "source $INSTALL_DIR/config/$x" > $HOME/$x
 done
