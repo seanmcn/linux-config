@@ -10,7 +10,8 @@ else
   exit
 fi;
 
-files=(.bashrc .bash_functions .bash_aliases .inputrc)
+# .inputrc
+files=(.bashrc .bash_functions .bash_aliases)
 echo "Backing-up and re-writing configurations!"
 
 for x in "${files[@]}" ; do
