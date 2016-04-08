@@ -31,6 +31,7 @@ And add the following:
 
 ### cl 
 **Description:** Enters a directory and lists contents. CD + LS
+
 **Example usage:** 
 ```sh
 cl ~/.bash
@@ -38,6 +39,7 @@ cl ~/.bash
 
 ### cdn
 **Description:** Traverse backwards by number. Prevents you from doing cd ../../../
+
 **Example usage:**
 ```sh
 cdn 2
@@ -45,6 +47,7 @@ cdn 2
 
 ### extract
 **Description:** Extracts any file.
+
 **Example usage:**
 ```sh
 extract archive.tar.bz2
@@ -52,11 +55,22 @@ extract archive.tar.bz2
 
 ### follow
 **Description:** Follows a file. Shorter tail -f -n 600
+
 **Example usage:**
 ```sh
 follow /var/log/nginx/error.log
 ```
 
+### lso
+**Description:** Display octal file permissions
+
+**Example usage:**
+```sh
+lso()
+```
+
 ## Other things included
+
+> **This is currently broken and disabled**
 
 I've also changed .inputrc around a little to give better auto-completion for commands (in my opinion) using command history, type part of a previous command and then press up or down arrows to cycle through options.
