@@ -7,8 +7,8 @@
     pager = true
 
 [user]
-    email = sean.mcnamara@ubc.ca
-    name = Sean McNamara
+    email = YOU@EMAIL.com
+    name = Your Name
 
 [alias]
     br = branch -v
