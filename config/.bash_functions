@@ -38,6 +38,11 @@ extract () {
   fi
 }
 
+# Grep with color and display non-results
+highlight() {
+    grep --color -E "$1|$" "${@:1}"
+}
+
 # Default tail/follow file
 follow() { tail -f -n 600 "$@"; }
 
