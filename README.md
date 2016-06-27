@@ -63,7 +63,7 @@ follow /var/log/nginx/error.log
 ```
 
 ### highlight
-**Description:** Grep for a phrase, but include all lines in the file and highlight the phrase in color.
+**Description:** Search for a phrase, but include all lines in the file and highlight the phrase in color.
 
 **Example usage:**
 ```sh
