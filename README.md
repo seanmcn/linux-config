@@ -51,6 +51,7 @@ cdn 2
 **Example usage:**
 ```sh
 extract archive.tar.bz2
+extract another.tar.gz
 ```
 
 ### follow
@@ -59,6 +60,14 @@ extract archive.tar.bz2
 **Example usage:**
 ```sh
 follow /var/log/nginx/error.log
+```
+
+### highlight
+**Description:** Grep for a phrase, but include all lines in the file and highlight the phrase in color.
+
+**Example usage:**
+```sh
+highlight "awesome" /var/log/fun.log
 ```
 
 ### lso
